@@ -23,7 +23,7 @@
 <title>브레인시티 비스타동원 | 방문예약</title>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-<meta name="description" content="삼성전자 평택캠퍼스 바로 앞, 브레인시티 비스타동원. 모델하우스 방문 예약 안내.">
+<meta name="description" content="카이스트 평택캠퍼스 바로 앞, 브레인시티 비스타동원. 모델하우스 방문 예약 안내.">
 <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
 <link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.css">
 
@@ -167,7 +167,7 @@
     flex-shrink:0;font-size:11px;font-weight:700;color:var(--green-dark);
     background:#e8f0ea;padding:4px 9px;border-radius:999px;white-space:nowrap;
   }
-  .loc-gallery{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:16px;}
+  .loc-gallery{margin-top:16px;}
   .loc-gallery figure{margin:0;border-radius:10px;overflow:hidden;border:1px solid var(--line);}
   .loc-gallery figcaption{font-size:11px;color:var(--ink-soft);padding:6px 8px;}
 
@@ -396,7 +396,7 @@
     <div class="hero-content">
       <span class="hero-badge">브레인시티 마지막 민간분양</span>
       <h1 class="hero-title">
-        삼성전자 평택캠퍼스 바로 앞
+        카이스트 평택캠퍼스 바로 앞
         <strong>브레인시티 비스타동원</strong>
       </h1>
       <ul class="hero-points">
@@ -424,7 +424,7 @@
       </div>
       <div class="stat-card">
         <span class="num">2</span>
-        <h3>삼성전자 · 아주대병원 직주근접</h3>
+        <h3>카이스트 · 아주대병원 직주근접</h3>
         <p>평택캠퍼스와 대학병원이 도보·차량 근거리. 실수요 배후가 확실합니다.</p>
       </div>
       <div class="stat-card">
@@ -448,8 +448,8 @@
     <p class="caption">본 이미지는 소비자의 이해를 돕기 위한 것으로 실제와 다를 수 있습니다.</p>
 
     <ul class="loc-list">
-      <li><span class="name">삼성전자 평택캠퍼스</span><span class="badge">직주근접</span></li>
-      <li><span class="name">아주대병원 평택</span><span class="badge">의료 인프라</span></li>
+      <li><span class="name">카이스트 평택캠퍼스</span><span class="badge">직주근접</span></li>
+      <li><span class="name">아주대병원 평택(예정)</span><span class="badge">의료 인프라</span></li>
       <li><span class="name">GTX-A / GTX-C (예정)</span><span class="badge">광역교통 (예정)</span></li>
       <li><span class="name">초·중학교</span><span class="badge">도보권</span></li>
       <li><span class="name">브레인시티 산업단지</span><span class="badge">배후수요</span></li>
@@ -462,13 +462,6 @@
           <img src="images/location/교통_노선요약.jpg" alt="SRT·GTX-C·GTX-A·1호선·KTX 소요시간 카드" loading="lazy">
         </picture>
         <figcaption>광역교통 요약 (GTX는 예정)</figcaption>
-      </figure>
-      <figure>
-        <picture>
-          <source srcset="images/location/단지배치도.webp" type="image/webp">
-          <img src="images/location/단지배치도.jpg" alt="단지 배치도 및 타입별 세대수" loading="lazy">
-        </picture>
-        <figcaption>단지 배치도</figcaption>
       </figure>
     </div>
     <p class="notice">GTX-A 평택 연장, 학교·유치원 등은 예정 사항이며 추진 일정에 따라 변경될 수 있습니다.</p>
@@ -494,13 +487,6 @@
       <div class="overview-item"><div class="k">규모</div><div class="v">지하 2층, 지상 26~35층, 14개 동</div></div>
       <div class="overview-item"><div class="k">평형</div><div class="v">59㎡ · 84㎡ · 106㎡</div></div>
     </div>
-
-    <figure class="plan-img" style="margin-bottom:24px;">
-      <picture>
-        <source srcset="images/plan/사업개요.webp" type="image/webp">
-        <img src="images/plan/사업개요.jpg" alt="사업개요: 대지위치·면적·규모 표, 총 1,600세대" loading="lazy">
-      </picture>
-    </figure>
 
     <h2>평형 안내</h2>
     <div class="tabs" role="tablist" aria-label="평형 선택">
@@ -712,7 +698,7 @@
       <span class="field-error" id="__CONSENT_ERR_ID__">개인정보 수집·이용에 동의해야 접수가 가능합니다.</span>
 
       <button type="submit" class="submit-btn">안내 받기</button>
-      <p class="form-foot">· 상담받으셨다고 계약 의무는 전혀 없습니다.</p>
+      <p class="form-foot">· 상담받으셨다고 계약 의무는 전혀 없습니다. 편하게 연락주세요 :)</p>
     </div>
 
     <div class="form-success">
@@ -728,7 +714,7 @@
   "use strict";
 
   // 폼 데이터 전송 엔드포인트. 비어있으면 목업 모드(콘솔 로그 + 성공 UI만 표시).
-  const FORM_ENDPOINT = '';
+  const FORM_ENDPOINT = 'https://script.google.com/macros/s/AKfycbxO3K1kSFbYqdlD1QsnH3XtwL4Ga-6F-ooJR3tf8vQpm8hCStiWf_6twwLaSj99vUN1/exec';
 
   // ---------- UTM / gclid 수집 ----------
   function getTrackingParams(){
@@ -838,7 +824,7 @@
 
     fetch(FORM_ENDPOINT, {
       method: 'POST',
-      headers: {'Content-Type':'application/json'},
+      headers: {'Content-Type':'text/plain;charset=utf-8'},
       body: JSON.stringify(payload)
     })
     .then(function(res){
