@@ -155,7 +155,29 @@
 
   /* ---------- 03 입지 ---------- */
   .section-03{background:var(--cream);}
-  .location-hero-img{border-radius:var(--radius);overflow:hidden;margin-bottom:14px;border:1px solid var(--line);}
+  .loc-diagram{
+    background:linear-gradient(180deg, var(--green-dark), #0f2d20);
+    border-radius:var(--radius);color:#fff;
+    padding:22px 20px;margin-bottom:16px;
+  }
+  .loc-diagram-center{
+    display:flex;align-items:center;gap:10px;
+    padding-bottom:16px;margin-bottom:16px;
+    border-bottom:1px dashed rgba(255,255,255,.25);
+  }
+  .loc-diagram-center .pin-dot{
+    width:14px;height:14px;border-radius:50%;background:var(--gold);
+    box-shadow:0 0 0 5px rgba(200,162,75,.22);flex-shrink:0;
+  }
+  .loc-diagram-center strong{font-size:18px;letter-spacing:-0.01em;}
+  .loc-diagram-points{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:14px;}
+  .loc-diagram-points li{display:flex;align-items:center;gap:12px;}
+  .loc-diagram-points .point-icon{
+    width:34px;height:34px;border-radius:50%;background:rgba(255,255,255,.12);
+    display:flex;align-items:center;justify-content:center;font-size:16px;flex-shrink:0;
+  }
+  .loc-diagram-points .point-name{font-weight:700;font-size:16px;}
+  .loc-diagram-points .point-sub{font-size:13px;color:rgba(255,255,255,.62);margin-left:auto;}
   .loc-list{list-style:none;margin:16px 0 0;padding:0;display:flex;flex-direction:column;}
   .loc-list li{
     display:flex;align-items:center;justify-content:space-between;gap:10px;
@@ -440,13 +462,34 @@
   <section id="location" class="section-03" aria-label="입지 환경">
     <span class="section-label">Location</span>
     <h2>브레인시티가 만드는 입지 가치</h2>
-    <figure class="location-hero-img">
-      <picture>
-        <source srcset="images/location/입지_오픈뷰.webp" type="image/webp">
-        <img src="images/location/입지_오픈뷰.jpg" alt="지제역·서정리역·카이스트·한경국립대 표기 항공뷰" loading="lazy">
-      </picture>
-    </figure>
-    <p class="caption">본 이미지는 소비자의 이해를 돕기 위한 것으로 실제와 다를 수 있습니다.</p>
+    <div class="loc-diagram">
+      <div class="loc-diagram-center">
+        <span class="pin-dot" aria-hidden="true"></span>
+        <strong>브레인시티 비스타동원</strong>
+      </div>
+      <ul class="loc-diagram-points">
+        <li>
+          <span class="point-icon" aria-hidden="true">🚉</span>
+          <span class="point-name">지제역</span>
+          <span class="point-sub">SRT · 1호선</span>
+        </li>
+        <li>
+          <span class="point-icon" aria-hidden="true">🚉</span>
+          <span class="point-name">서정리역</span>
+          <span class="point-sub">1호선</span>
+        </li>
+        <li>
+          <span class="point-icon" aria-hidden="true">🎓</span>
+          <span class="point-name">한경국립대</span>
+          <span class="point-sub">평택캠퍼스</span>
+        </li>
+        <li>
+          <span class="point-icon" aria-hidden="true">🔬</span>
+          <span class="point-name">카이스트</span>
+          <span class="point-sub">평택캠퍼스(예정)</span>
+        </li>
+      </ul>
+    </div>
 
     <ul class="loc-list">
       <li><span class="name">카이스트 평택캠퍼스</span><span class="badge">직주근접</span></li>
