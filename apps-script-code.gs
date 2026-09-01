@@ -17,7 +17,11 @@ function doPost(e) {
       data.utm_medium || '',
       data.utm_campaign || '',
       data.gclid || '',
-      data.source_slot || ''
+      data.source_slot || '',
+      data.consent_required ? 'Y' : 'N',
+      data.consent_marketing ? 'Y' : 'N',
+      data.consent_at || '',
+      data.consent_version || ''
     ]);
 
     sendNotification_(data);
@@ -37,7 +41,7 @@ function getSheet_() {
   let sheet = ss.getSheetByName(SHEET_NAME);
   if (!sheet) {
     sheet = ss.insertSheet(SHEET_NAME);
-    sheet.appendRow(['접수시각', '이름', '연락처', 'UTM_소스', 'UTM_매체', 'UTM_캠페인', 'GCLID', '유입폼위치']);
+    sheet.appendRow(['접수시각', '이름', '연락처', 'UTM_소스', 'UTM_매체', 'UTM_캠페인', 'GCLID', '유입폼위치', '동의(필수)', '마케팅동의', '동의시각', '동의버전']);
   }
   return sheet;
 }

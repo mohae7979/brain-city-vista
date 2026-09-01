@@ -11,7 +11,8 @@
   기타 확인 필요(기획서 §7 참고, 코드에는 직접 반영 안 함):
   - 정확한 거리·소요시간 수치는 입지_GTX도로망/교통_노선요약 이미지 내 표기를 그대로 사용,
     별도 텍스트 수치는 추정 기재하지 않았음.
-  - 개인정보처리방침 본문 — 현재 동의 체크박스 "자세히보기"는 #privacy 앵커(페이지 내 더미)로 연결.
+  - 개인정보처리방침 : privacy-policy.html 별도 페이지로 분리 완료 (사업자 정보 등 미확정 항목은 그 파일 상단 주석 참고).
+  - 동의 체크박스 "자세히보기"는 폼 내부 접이식 박스(수집 항목/목적/보유기간/거부권리 고지)로 인라인 처리됨.
 -->
 <!--
   파일 하단 요약: 각 섹션 대략적 스크롤 위치(모바일 390px 기준)는
@@ -231,9 +232,10 @@
   .field.has-error input{border-color:var(--danger);}
   .field.has-error .field-error{display:block;}
 
+  .consent-group{margin:6px 0 4px;}
   .consent-row{
     display:flex;align-items:flex-start;gap:10px;
-    padding:12px 4px;margin:6px 0 4px;cursor:pointer;
+    min-height:44px;padding:12px 4px;cursor:pointer;
     -webkit-tap-highlight-color:transparent;
   }
   .consent-row input[type="checkbox"]{
@@ -248,12 +250,42 @@
     content:'';position:absolute;left:6px;top:2px;width:6px;height:11px;
     border:solid #fff;border-width:0 2px 2px 0;transform:rotate(45deg);
   }
-  .consent-text{font-size:14.5px;line-height:1.5;color:var(--ink-soft);}
-  .consent-text button{
+  .consent-text{font-size:14.5px;line-height:1.6;color:var(--ink-soft);}
+  .consent-badge{
+    display:inline-block;font-size:11.5px;font-weight:800;padding:2px 7px;
+    border-radius:5px;margin-right:5px;vertical-align:1px;
+  }
+  .consent-badge.badge-required{background:var(--green);color:#fff;}
+  .consent-badge.badge-optional{background:#e4e1d8;color:var(--ink-soft);}
+  .consent-detail-btn{
     background:none;border:none;padding:0;color:var(--green);font-weight:700;
     text-decoration:underline;font-size:14.5px;cursor:pointer;
   }
-  #consent-error.field-error{margin:0 0 10px 4px;}
+  .consent-detail-btn--sm{font-size:12.5px;}
+  #consent-error.field-error{margin:0 0 6px 4px;}
+
+  .disclosure-panel{
+    max-height:0;overflow:hidden;
+    transition:max-height .25s ease;
+    margin:0 4px;
+  }
+  .disclosure-panel.is-open{max-height:420px;}
+  .disclosure-panel-inner{padding:2px 0 14px;}
+  .consent-table{
+    width:100%;border-collapse:collapse;font-size:12.5px;line-height:1.5;
+    background:#fbfaf5;border:1px solid var(--line);border-radius:8px;overflow:hidden;
+  }
+  .consent-table th, .consent-table td{
+    text-align:left;padding:8px 10px;border-bottom:1px solid var(--line);vertical-align:top;
+  }
+  .consent-table tr:last-child th, .consent-table tr:last-child td{border-bottom:none;}
+  .consent-table th{
+    width:76px;color:var(--green-dark);font-weight:700;background:#f1ede1;white-space:nowrap;
+  }
+  .disclosure-note{
+    font-size:12.5px;line-height:1.6;color:var(--ink-soft);
+    background:#fbfaf5;border:1px solid var(--line);border-radius:8px;padding:10px 12px;margin:0;
+  }
 
   .submit-btn{
     width:100%;height:54px;border:none;border-radius:12px;
@@ -706,7 +738,7 @@
     <p class="foot-line">주소 : <span class="placeholder">BIZ_INFO_PLACEHOLDER (주소)</span></p>
     <p class="foot-line">사업자등록번호 : <span class="placeholder">BIZ_INFO_PLACEHOLDER (사업자번호)</span></p>
     <p class="foot-line">대표전화 : <a href="tel:010-8857-6143">010-8857-6143</a></p>
-    <p class="foot-line">개인정보처리방침 : <a href="#privacy" id="privacy-link">보기</a></p>
+    <p class="foot-line">개인정보처리방침 : <a href="privacy-policy.html" id="privacy-link">보기</a></p>
     <div class="foot-legal">
       본 광고는 참고용이며 실제와 다를 수 있습니다. 게재된 이미지·평면도·조감도는 소비자의 이해를 돕기 위한 것으로 실제 시공 시 변경될 수 있으며, GTX 등 교통망 및 학교 등 교육시설은 예정 사항으로 추진 일정에 따라 변동될 수 있습니다. 본 페이지는 계약 체결을 유도하지 않으며 방문 상담 안내를 목적으로 합니다.
     </div>
@@ -736,14 +768,41 @@
         <span class="field-error">연락처를 정확히 입력해 주세요.</span>
       </div>
 
-      <label class="consent-row">
-        <input type="checkbox" name="consent" required>
-        <span class="consent-text">
-          개인정보 수집·이용에 동의합니다
-          <button type="button" class="consent-detail-btn">자세히보기</button>
-        </span>
-      </label>
-      <span class="field-error" id="__CONSENT_ERR_ID__">개인정보 수집·이용에 동의해야 접수가 가능합니다.</span>
+      <div class="consent-group">
+        <label class="consent-row">
+          <input type="checkbox" name="consentRequired" required>
+          <span class="consent-text">
+            <span class="consent-badge badge-required">필수</span>개인정보 수집·이용에 동의합니다
+            <button type="button" class="consent-detail-btn" aria-expanded="false" aria-controls="__DISCLOSURE_REQUIRED_ID__">자세히보기</button>
+          </span>
+        </label>
+        <div class="disclosure-panel" id="__DISCLOSURE_REQUIRED_ID__" aria-hidden="true">
+          <div class="disclosure-panel-inner">
+            <table class="consent-table">
+              <tbody>
+                <tr><th scope="row">수집 항목</th><td>이름, 연락처</td></tr>
+                <tr><th scope="row">수집 목적</th><td>분양 상담 및 모델하우스 방문 안내</td></tr>
+                <tr><th scope="row">보유 기간</th><td>수집일로부터 6개월 (동의 철회 시 즉시 파기)</td></tr>
+                <tr><th scope="row">거부 권리</th><td>동의를 거부하실 수 있으며, 거부 시 상담 안내가 제한됩니다.</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+        <span class="field-error" id="__CONSENT_ERR_ID__" aria-live="polite">개인정보 수집·이용에 동의해야 접수가 가능합니다.</span>
+
+        <label class="consent-row">
+          <input type="checkbox" name="consentMarketing">
+          <span class="consent-text">
+            <span class="consent-badge badge-optional">선택</span>분양 정보 문자·카톡 수신에 동의합니다
+            <button type="button" class="consent-detail-btn consent-detail-btn--sm" aria-expanded="false" aria-controls="__DISCLOSURE_MARKETING_ID__">자세히보기</button>
+          </span>
+        </label>
+        <div class="disclosure-panel" id="__DISCLOSURE_MARKETING_ID__" aria-hidden="true">
+          <div class="disclosure-panel-inner">
+            <p class="disclosure-note">분양 일정, 잔여 세대, 이벤트 등 광고성 정보를 문자 또는 카카오톡으로 받아보실 수 있습니다. 수신 동의하지 않으셔도 상담은 정상 진행됩니다. 언제든 수신거부하실 수 있습니다.</p>
+          </div>
+        </div>
+      </div>
 
       <button type="submit" class="submit-btn">안내 받기</button>
       <p class="form-foot">· 상담받으셨다고 계약 의무는 전혀 없습니다. 편하게 연락주세요 :)</p>
@@ -790,16 +849,22 @@
   const template = document.getElementById('reservation-form-template');
   let formSeq = 0;
 
+  const CONSENT_VERSION = '2026-09-01';
+
   function mountForm(slotId){
     formSeq += 1;
     const nameId = 'res-name-' + formSeq;
     const phoneId = 'res-phone-' + formSeq;
     const consentErrId = 'res-consent-err-' + formSeq;
+    const disclosureRequiredId = 'res-disclosure-required-' + formSeq;
+    const disclosureMarketingId = 'res-disclosure-marketing-' + formSeq;
 
     const html = template.innerHTML
       .replaceAll('__NAME_ID__', nameId)
       .replaceAll('__PHONE_ID__', phoneId)
-      .replaceAll('__CONSENT_ERR_ID__', consentErrId);
+      .replaceAll('__CONSENT_ERR_ID__', consentErrId)
+      .replaceAll('__DISCLOSURE_REQUIRED_ID__', disclosureRequiredId)
+      .replaceAll('__DISCLOSURE_MARKETING_ID__', disclosureMarketingId);
 
     const slot = document.getElementById(slotId);
     slot.innerHTML = html;
@@ -808,9 +873,9 @@
     const phoneInput = form.querySelector('input[name="phone"]');
     const nameField = form.querySelector('[data-field="name"]');
     const phoneField = form.querySelector('[data-field="phone"]');
-    const consentInput = form.querySelector('input[name="consent"]');
+    const consentRequiredInput = form.querySelector('input[name="consentRequired"]');
+    const consentMarketingInput = form.querySelector('input[name="consentMarketing"]');
     const consentErr = form.querySelector('#' + consentErrId);
-    const detailBtn = form.querySelector('.consent-detail-btn');
     const fieldsWrap = form.querySelector('.form-fields');
     const successWrap = form.querySelector('.form-success');
 
@@ -822,8 +887,14 @@
       }
     });
 
-    detailBtn.addEventListener('click', function(){
-      document.getElementById('privacy').scrollIntoView({behavior:'smooth', block:'start'});
+    form.querySelectorAll('.consent-detail-btn').forEach(function(btn){
+      const panel = form.querySelector('#' + btn.getAttribute('aria-controls'));
+      btn.addEventListener('click', function(){
+        const willOpen = !panel.classList.contains('is-open');
+        panel.classList.toggle('is-open', willOpen);
+        panel.setAttribute('aria-hidden', String(!willOpen));
+        btn.setAttribute('aria-expanded', String(willOpen));
+      });
     });
 
     form.addEventListener('submit', function(e){
@@ -840,7 +911,7 @@
       phoneField.classList.toggle('has-error', !phoneOk);
       if(!phoneOk) valid = false;
 
-      const consentOk = consentInput.checked;
+      const consentOk = consentRequiredInput.checked;
       consentErr.style.display = consentOk ? 'none' : 'block';
       if(!consentOk) valid = false;
 
@@ -849,7 +920,10 @@
       const payload = Object.assign({
         name: nameVal,
         phone: phoneVal,
-        consent: true,
+        consent_required: true,
+        consent_marketing: consentMarketingInput.checked,
+        consent_at: new Date().toISOString(),
+        consent_version: CONSENT_VERSION,
         submitted_at: new Date().toISOString(),
         source_slot: slotId
       }, getTrackingParams());

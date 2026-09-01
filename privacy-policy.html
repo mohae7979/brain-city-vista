@@ -1,0 +1,230 @@
+<!--
+  개인정보처리방침 — 브레인시티 비스타동원 방문예약 페이지
+  ──────────────────────────────────────────
+  [미확정 값 — 실사용 전 반드시 교체할 것] 아래 항목을 전부 찾아 실제 값으로 바꿔주세요.
+  1. [[사업자명]]              → 상호(사업자명)
+  2. [[대표자명]]              → 대표자 성명
+  3. [[사업자등록번호]]         → 사업자등록번호
+  4. [[사업소재지]]             → 사업장 주소
+  5. [[개인정보보호책임자성명]]  → 개인정보 보호책임자 성명
+  6. [[보호책임자연락처]]       → 개인정보 보호책임자 연락처 (대표전화와 다를 수 있음)
+  7. [[보호책임자이메일]]       → 개인정보 보호책임자 이메일
+
+  대표전화(010-8857-6143)는 index.html과 동일하게 이미 반영되어 있습니다.
+  시행일자는 index.html의 CONSENT_VERSION("2026-09-01")과 동일하게 맞춰뒀습니다 —
+  둘 중 하나를 바꾸면 반드시 다른 쪽도 함께 갱신하세요.
+-->
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<title>개인정보처리방침 | 브레인시티 비스타동원</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<meta name="robots" content="noindex">
+<link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+<link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.css">
+<style>
+  :root{
+    --green:#1F5C43;
+    --green-dark:#153f2e;
+    --gold:#C8A24B;
+    --cream:#F3EEE2;
+    --ink:#1B1B1B;
+    --ink-soft:#5b5b57;
+    --line:#e3ddc9;
+    --maxw:480px;
+  }
+  *{box-sizing:border-box;}
+  body{
+    margin:0;
+    font-family:'Pretendard',-apple-system,BlinkMacSystemFont,'Malgun Gothic',sans-serif;
+    background:var(--cream);
+    color:var(--ink);
+    -webkit-text-size-adjust:100%;
+  }
+  .wrap{max-width:var(--maxw);margin:0 auto;background:#fff;min-height:100vh;}
+  header{
+    position:sticky;top:0;z-index:10;
+    background:rgba(255,255,255,.94);backdrop-filter:blur(6px);
+    border-bottom:1px solid var(--line);
+    padding:14px 20px;display:flex;align-items:center;gap:10px;
+  }
+  header a{
+    color:var(--green-dark);text-decoration:none;font-weight:700;font-size:14px;
+    display:inline-flex;align-items:center;gap:4px;
+  }
+  main{padding:24px 20px 60px;}
+  h1{font-size:22px;color:var(--green-dark);margin:0 0 6px;letter-spacing:-0.02em;}
+  .effective-date{font-size:13px;color:var(--ink-soft);margin:0 0 24px;}
+  .biz-box{
+    background:#fbfaf5;border:1px solid var(--line);border-radius:12px;
+    padding:16px 18px;margin-bottom:28px;font-size:13.5px;line-height:1.9;color:var(--ink-soft);
+  }
+  .biz-box strong{color:var(--ink);font-weight:700;}
+  section{margin-bottom:26px;}
+  h2{
+    font-size:16px;color:var(--green-dark);margin:0 0 10px;
+    display:flex;align-items:center;gap:8px;
+  }
+  h2 .num{
+    display:inline-flex;align-items:center;justify-content:center;
+    width:22px;height:22px;border-radius:50%;background:var(--green);color:#fff;
+    font-size:12px;font-weight:800;flex-shrink:0;
+  }
+  p, li{font-size:14px;line-height:1.7;color:var(--ink-soft);}
+  ul{margin:6px 0;padding-left:20px;}
+  li{margin-bottom:4px;}
+  table{width:100%;border-collapse:collapse;font-size:13px;margin-top:6px;}
+  th, td{text-align:left;padding:8px 10px;border-bottom:1px solid var(--line);vertical-align:top;}
+  th{color:var(--green-dark);font-weight:700;background:#f1ede1;white-space:nowrap;width:84px;}
+  .placeholder{
+    color:#a8710f;background:#fbf3de;padding:0 4px;border-radius:4px;font-weight:700;
+  }
+  footer{
+    padding:20px;text-align:center;font-size:12px;color:var(--ink-soft);
+    border-top:1px solid var(--line);
+  }
+  footer a{color:var(--green);font-weight:700;text-decoration:none;}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <a href="index.html">← 돌아가기</a>
+  </header>
+
+  <main>
+    <h1>개인정보처리방침</h1>
+    <p class="effective-date">시행일자: 2026년 9월 1일</p>
+
+    <div class="biz-box">
+      <strong>[[사업자명]]</strong>(이하 "회사")은 정보주체의 개인정보를 중요시하며,
+      「개인정보 보호법」 등 관계 법령을 준수합니다. 회사는 본 방침을 통해
+      이용자가 제공하는 개인정보가 어떠한 목적과 방식으로 이용되고 있으며,
+      개인정보 보호를 위해 어떠한 조치가 취해지고 있는지 알려드립니다.
+    </div>
+
+    <section>
+      <h2><span class="num">1</span>개인정보의 수집 항목 및 수집 방법</h2>
+      <p>회사는 모델하우스 방문 예약 신청 시 아래와 같이 개인정보를 수집합니다.</p>
+      <table>
+        <tbody>
+          <tr><th>수집 항목</th><td>이름, 연락처(휴대전화번호)</td></tr>
+          <tr><th>수집 방법</th><td>웹사이트 내 방문예약 신청 폼을 통한 이용자의 자발적 입력</td></tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section>
+      <h2><span class="num">2</span>개인정보의 수집·이용 목적</h2>
+      <ul>
+        <li>분양 상담 및 모델하우스 방문 예약 안내 (필수)</li>
+        <li>분양 일정, 잔여 세대, 이벤트 등 광고성 정보의 문자·카카오톡 발송 (선택 동의 시에만)</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2><span class="num">3</span>개인정보의 보유 및 이용 기간</h2>
+      <p>
+        수집일로부터 <strong style="color:var(--ink)">6개월간</strong> 보유하며, 보유 기간 경과 시
+        지체없이 파기합니다. 이용자가 동의를 철회하는 경우 즉시 파기합니다.
+        단, 관계 법령에 특별한 규정이 있는 경우 해당 법령에서 정한 기간 동안 보관합니다.
+      </p>
+    </section>
+
+    <section>
+      <h2><span class="num">4</span>개인정보의 제3자 제공</h2>
+      <p>
+        회사는 이용자의 개인정보를 원칙적으로 외부에 제공하지 않습니다.
+        다만 이용자가 사전에 별도로 동의하였거나, 법령의 규정에 의거하여
+        수사기관이 적법한 절차에 따라 요청하는 경우는 예외로 합니다.
+      </p>
+    </section>
+
+    <section>
+      <h2><span class="num">5</span>개인정보 처리의 위탁</h2>
+      <p>회사는 현재 이용자의 개인정보 처리를 외부 업체에 위탁하고 있지 않습니다.</p>
+    </section>
+
+    <section>
+      <h2><span class="num">6</span>정보주체의 권리·의무 및 행사 방법</h2>
+      <p>이용자는 언제든지 아래의 권리를 행사할 수 있습니다.</p>
+      <ul>
+        <li>개인정보 열람 요구</li>
+        <li>오류 등이 있을 경우 정정 요구</li>
+        <li>삭제 요구</li>
+        <li>처리 정지 요구</li>
+      </ul>
+      <p>
+        권리 행사는 아래 "9. 개인정보 보호책임자"의 연락처로 서면, 이메일 등을 통해
+        요청하실 수 있으며, 회사는 지체없이 조치하겠습니다.
+      </p>
+    </section>
+
+    <section>
+      <h2><span class="num">7</span>개인정보의 파기 절차 및 방법</h2>
+      <p>
+        회사는 개인정보 보유 기간의 경과, 처리 목적 달성 등 개인정보가 불필요하게
+        되었을 때에는 지체없이 해당 개인정보를 파기합니다.
+      </p>
+      <ul>
+        <li>전자적 파일 형태로 저장된 개인정보는 복구 및 재생이 불가능한 방법으로 영구 삭제합니다.</li>
+        <li>종이 문서에 기록·저장된 개인정보가 있는 경우 분쇄기로 분쇄하거나 소각을 통해 파기합니다.</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2><span class="num">8</span>개인정보의 안전성 확보 조치</h2>
+      <p>회사는 개인정보 보호를 위해 다음과 같은 조치를 취하고 있습니다.</p>
+      <ul>
+        <li>개인정보에 대한 접근 권한을 최소한의 인원으로 제한</li>
+        <li>개인정보 처리 시스템 접근 통제 및 접근 기록 관리</li>
+        <li>수집된 개인정보의 안전한 저장·전송을 위한 보호 조치</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2><span class="num">9</span>개인정보 보호책임자</h2>
+      <p>
+        회사는 개인정보 처리에 관한 업무를 총괄해서 책임지고, 개인정보 처리와 관련한
+        정보주체의 불만 처리 및 피해 구제 등을 위하여 아래와 같이 개인정보 보호책임자를
+        지정하고 있습니다.
+      </p>
+      <table>
+        <tbody>
+          <tr><th>성명</th><td>[[개인정보보호책임자성명]]</td></tr>
+          <tr><th>연락처</th><td>[[보호책임자연락처]]</td></tr>
+          <tr><th>이메일</th><td>[[보호책임자이메일]]</td></tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section>
+      <h2><span class="num">10</span>개인정보처리방침의 변경</h2>
+      <p>
+        이 개인정보처리방침은 2026년 9월 1일부터 적용됩니다. 법령·정책 또는 보안
+        기술의 변경에 따라 내용의 추가·삭제 및 수정이 있을 시에는 변경사항의 시행
+        7일 전부터 웹사이트를 통해 공지하겠습니다.
+      </p>
+    </section>
+
+    <section>
+      <h2><span class="num">i</span>사업자 정보</h2>
+      <table>
+        <tbody>
+          <tr><th>상호</th><td>[[사업자명]]</td></tr>
+          <tr><th>대표자</th><td>[[대표자명]]</td></tr>
+          <tr><th>사업자등록번호</th><td>[[사업자등록번호]]</td></tr>
+          <tr><th>주소</th><td>[[사업소재지]]</td></tr>
+          <tr><th>대표전화</th><td>010-8857-6143</td></tr>
+        </tbody>
+      </table>
+    </section>
+  </main>
+
+  <footer>
+    <a href="index.html">브레인시티 비스타동원 방문예약 페이지로 돌아가기</a>
+  </footer>
+</div>
+</body>
+</html>
