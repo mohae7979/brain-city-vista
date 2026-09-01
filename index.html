@@ -355,17 +355,6 @@
   .community-grid figcaption{padding:10px 12px 12px;}
   .community-grid figcaption .title{font-size:15.5px;font-weight:700;color:var(--ink);}
   .community-grid figcaption .subtitle{font-size:13px;color:var(--green-dark);font-weight:600;margin-top:2px;}
-  .interior-scroll{
-    display:flex;gap:10px;overflow-x:auto;padding-bottom:6px;scroll-snap-type:x mandatory;
-    scrollbar-width:none;
-  }
-  .interior-scroll::-webkit-scrollbar{display:none;}
-  .interior-scroll figure{
-    flex:0 0 62%;scroll-snap-align:start;margin:0;
-    border-radius:12px;overflow:hidden;border:1px solid var(--line);background:#fff;
-  }
-  .interior-scroll img{height:170px;object-fit:cover;}
-  .interior-scroll figcaption{font-size:13px;color:var(--ink-soft);padding:8px 10px;}
 
   /* ---------- 07 FAQ ---------- */
   .section-07{background:#fff;}
@@ -624,8 +613,8 @@
     <p class="plan-cta">관심 평형 있으신가요? → 예약하고 실물 확인</p>
   </section>
 
-  <!-- [06] 커뮤니티 + 모델하우스 실내 -->
-  <section id="community" class="section-06" aria-label="커뮤니티 및 모델하우스 실내">
+  <!-- [06] 커뮤니티 -->
+  <section id="community" class="section-06" aria-label="커뮤니티">
     <span class="section-label">Community</span>
     <h2>커뮤니티 · 프리미엄</h2>
     <div class="community-grid">
@@ -663,37 +652,6 @@
       </figure>
     </div>
 
-    <h3 class="subhead">모델하우스 실내 (실제 촬영)</h3>
-    <div class="interior-scroll">
-      <figure>
-        <picture>
-          <source srcset="images/interior/거실_84A.webp" type="image/webp">
-          <img src="images/interior/거실_84A.jpg" alt="84A 타입 거실 실촬영" loading="lazy">
-        </picture>
-        <figcaption>84A 거실</figcaption>
-      </figure>
-      <figure>
-        <picture>
-          <source srcset="images/interior/주방_84A.webp" type="image/webp">
-          <img src="images/interior/주방_84A.jpg" alt="84A 타입 주방 실촬영" loading="lazy">
-        </picture>
-        <figcaption>84A 주방</figcaption>
-      </figure>
-      <figure>
-        <picture>
-          <source srcset="images/interior/침실_84B.webp" type="image/webp">
-          <img src="images/interior/침실_84B.jpg" alt="84B 타입 침실 실촬영" loading="lazy">
-        </picture>
-        <figcaption>84B 침실</figcaption>
-      </figure>
-      <figure>
-        <picture>
-          <source srcset="images/interior/드레스룸.webp" type="image/webp">
-          <img src="images/interior/드레스룸.jpg" alt="드레스룸 실촬영" loading="lazy">
-        </picture>
-        <figcaption>드레스룸</figcaption>
-      </figure>
-    </div>
   </section>
 
   <!-- [07] FAQ -->
