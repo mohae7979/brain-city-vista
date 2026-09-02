@@ -96,7 +96,7 @@
   .hero{
     position:relative;
     min-height:100svh;
-    display:flex;flex-direction:column;justify-content:flex-end;
+    display:flex;flex-direction:column;justify-content:center;
     padding:0;
     overflow:hidden;
   }
@@ -113,14 +113,11 @@
     margin:0 0 16px;font-weight:800;letter-spacing:-0.02em;
     text-shadow:0 2px 14px rgba(0,0,0,.3);
   }
-  .hero-headline span{display:block;font-size:33px;line-height:1.2;color:#fff;}
-  .hero-headline .hl-emphasis{
-    font-size:46px;color:var(--gold);line-height:1.1;
+  .hero-headline > span{display:block;font-size:33px;line-height:1.2;color:var(--gold);}
+  .hero-headline > .hl-emphasis{
+    font-size:46px;line-height:1.1;
   }
-  .hero-subline{
-    font-size:19px;color:rgba(255,255,255,.82);margin:0 0 18px;line-height:1.4;
-  }
-  .hero-subline strong{color:#fff;font-weight:700;}
+  .hero-headline .hl-white{color:#fff;display:inline;}
   .hero-points{list-style:none;margin:0 0 6px;padding:0;display:flex;flex-direction:column;gap:8px;}
   .hero-points li{
     display:flex;align-items:center;gap:8px;font-size:19.5px;font-weight:600;
@@ -389,8 +386,8 @@
   @media (min-width:768px){
     body{background:#e8e2d0;}
     .wrap{box-shadow:0 0 40px rgba(0,0,0,.12);}
-    .hero-headline .hl-emphasis{font-size:50px;}
-    .hero-headline span{font-size:35px;}
+    .hero-headline > .hl-emphasis{font-size:50px;}
+    .hero-headline > span{font-size:35px;}
   }
   section[id]{scroll-margin-top:64px}
 </style>
@@ -416,12 +413,12 @@
     </picture>
     <div class="hero-content">
       <h1 class="hero-headline">
-        <span class="hl-emphasis">계약금 0원</span>
-        <span>브레인시티 막바지 분양</span>
-        <span>분양가상한제 적용</span>
+        <span class="hl-emphasis">계약금 <span class="hl-white">0</span>원</span>
+        <span>브레인시티 <span class="hl-white">막바지 분양</span></span>
+        <span><span class="hl-white">분양가상한제</span> 적용</span>
       </h1>
-      <p class="hero-subline"><strong>카이스트 평택캠퍼스</strong> 바로 앞 · 브레인시티 비스타동원</p>
       <ul class="hero-points">
+        <li>카이스트 평택캠퍼스 바로 앞</li>
         <li>초·중학교 도보 1분</li>
       </ul>
       <p class="hero-legal">본 이미지는 소비자의 이해를 돕기 위한 것으로 실제와 다를 수 있습니다.</p>
