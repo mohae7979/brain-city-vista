@@ -304,17 +304,8 @@
   .form-fields{transition:opacity .15s ease;}
   .form-fields.hide{display:none;}
 
-  /* ---------- 05 단지개요 · 평형 ---------- */
+  /* ---------- 05 평형 ---------- */
   .section-05{background:#fff;}
-  .overview-grid{
-    display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:22px;
-  }
-  .overview-item{
-    border:1px solid var(--line);border-radius:10px;padding:12px;background:#fbfaf5;
-  }
-  .overview-item .k{font-size:15px;color:var(--ink-soft);margin-bottom:4px;font-weight:700;}
-  .overview-item .v{font-size:18.5px;font-weight:700;color:var(--ink);line-height:1.4;}
-
   .tabs{display:flex;gap:6px;overflow-x:auto;padding-bottom:4px;margin-bottom:14px;scrollbar-width:none;}
   .tabs::-webkit-scrollbar{display:none;}
   .tab-btn{
@@ -547,17 +538,9 @@
     </div>
   </section>
 
-  <!-- [05] 단지 개요 + 평형 탭 -->
-  <section id="plan" class="section-05" aria-label="단지 개요 및 평형 안내">
-    <span class="section-label">Overview</span>
-    <h2>단지 개요</h2>
-    <div class="overview-grid">
-      <div class="overview-item"><div class="k">위치</div><div class="v">평택브레인시티 일반산업단지 공동 4BL</div></div>
-      <div class="overview-item"><div class="k">대지면적</div><div class="v">81,959㎡</div></div>
-      <div class="overview-item"><div class="k">규모</div><div class="v">지하 2층, 지상 26~35층, 14개 동</div></div>
-      <div class="overview-item"><div class="k">평형</div><div class="v">59㎡ · 84㎡ · 106㎡</div></div>
-    </div>
-
+  <!-- [05] 평형 탭 -->
+  <section id="plan" class="section-05" aria-label="평형 안내">
+    <span class="section-label">Plan</span>
     <h2>평형 안내</h2>
     <div class="tabs" role="tablist" aria-label="평형 선택">
       <button class="tab-btn" role="tab" data-tab="59" aria-selected="true">59㎡</button>
